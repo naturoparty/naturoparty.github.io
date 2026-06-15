@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturoparty | Conseiller en Naturopathie & Éditions Bien-être</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #2C5E3B; /* Vert forestier élégant */
+            --primary-light: #F2F6F3; /* Fond vert très doux */
+            --accent: #D4A373; /* Terracotta / Doré solaire de la Côte d'Azur */
+            --accent-light: #FAEDCD;
+            --text-dark: #2B2B2B; /* Anthracite pour une lecture confortable */
+            --text-light: #666666;
+            --bg-white: #FFFFFF;
+            --font-title: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            --border-radius: 16px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--text-dark);
+            background-color: #FCFDFD;
+            line-height: 1.6;
+        }
+
+        /*--- NAVIGATION ---*/
+        header {
+            background-color: rgba(255, 255, 255, 0.92);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+            backdrop-filter: blur(12px);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-title);
+            font-size: 26px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+            letter-spacing: 0.5px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--primary);
+        }
+
+        /*--- HERO SECTION WITH VISUAL ---*/
+        .hero {
+            padding: 140px 20px;
+            background: linear-gradient(rgba(44, 94, 59, 0.75), rgba(44, 94, 59, 0.5)), 
+                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1800&q=80') no-repeat center center/cover;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-family: var(--font-title);
+            font-size: 52px;
+            line-height: 1.2;
+            margin-bottom: 24px;
+            font-weight: 600;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
+        }
+
+        .hero p {
+            font-size: 19px;
+            color: #EAEFEA;
+            margin-bottom: 40px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            font-weight: 300;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 16px 36px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
+        }
+
+        .btn:hover {
+            background-color: #c49261;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+            color: white;
+            margin-left: 15px;
+            box-shadow: none;
+        }
+        .btn-secondary:hover {
+            background-color: white;
+            color: var(--primary);
+            box-shadow: none;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(5px);
+            color: white;
+            padding: 6px 18px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            border: 1px solid rgba(255,255,255,0.3);
+        }
+
+        /*--- SECTIONS GENERAL ---*/
+        section {
+            padding: 100px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-family: var(--font-title);
+            font-size: 38px;
+            color: var(--primary);
+            margin-bottom: 12px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-light);
+            font-size: 16px;
+            max-width: 600px;
+            margin: 0 auto 60px auto;
+        }
+
+        /*--- APPROACH WITH IMAGES ---*/
+        .approach-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 35px;
+        }
+
+        .approach-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .approach-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .approach-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .approach-text {
+            padding: 30px;
+        }
+
+        .approach-text h3 {
+            font-family: var(--font-title);
+            font-size: 22px;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .quote-box {
+            text-align: center;
+            max-width: 800px;
+            margin: 80px auto 0 auto;
+            font-family: var(--font-title);
+            font-size: 26px;
+            font-style: italic;
+            color: var(--primary);
+            line-height: 1.4;
+            padding: 0 40px;
+        }
+
+        /*--- NEW SECTION: EBOOKS VITRINE ---*/
+        .ebooks-section {
+            background-color: #FDF9F5; /* Teinte chaude crème */
+            max-width: 100%;
+        }
+
+        .ebooks-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .ebooks-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 40px;
+            margin-top: 20px;
+        }
+
+        .ebook-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            box-shadow: var(--shadow);
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .ebook-cover {
+            width: 160px;
+            height: 240px;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+            flex-shrink: 0;
+            background-color: var(--primary-light);
+        }
+
+        .ebook-details {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .ebook-tag {
+            align-self: flex-start;
+            background-color: var(--accent-light);
+            color: #7A5C33;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            text-transform: uppercase;
+            margin-bottom: 12px;
+            letter-spacing: 0.5px;
+        }
+
+        .ebook-details h3 {
+            font-family: var(--font-title);
+            font-size: 22px;
+            color: var(--primary);
+            margin-bottom: 10px;
+            line-height: 1.3;
+        }
+
+        .ebook-details p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .ebook-meta {
+            font-size: 12px;
+            color: var(--text-dark);
+            font-weight: 500;
+            background-color: #F8F9FA;
+            padding: 6px 12px;
+            border-radius: 6px;
+            display: inline-block;
+            align-self: flex-start;
+        }
+
+        /*--- SERVICES & TARIFS ---*/
+        .services {
+            background-color: var(--primary-light);
+            max-width: 100%;
+        }
+
+        .services-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        .pricing-grid {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+        }
+
+        .price-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 50px 40px;
+            width: 100%;
+            max-width: 450px;
+            box-shadow: var(--shadow);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .price-card.featured {
+            border: 2px solid var(--primary);
+        }
+
+        .price-badge {
+            position: absolute;
+            top: -15px;
+            right: 30px;
+            background-color: var(--primary);
+            color: white;
+            padding: 5px 14px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+        }
+
+        .price-card h3 {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .duration {
+            color: var(--text-light);
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 44px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 30px;
+            font-family: var(--font-title);
+        }
+
+        .price span {
+            font-size: 18px;
+            font-weight: 400;
+            color: var(--text-light);
+            font-family: var(--font-body);
+        }
+
+        .price-features {
+            list-style: none;
+            margin-bottom: 40px;
+            flex-grow: 1;
+        }
+
+        .price-features li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 25px;
+            font-size: 15px;
+            color: var(--text-light);
+        }
+
+        .price-features li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        /*--- LEGAL & ETHICS ---*/
+        .ethics-box {
+            background-color: white;
+            border-left: 4px solid var(--accent);
+            padding: 40px;
+            border-radius: 0 var(--border-radius) var(--border-radius) 0;
+            box-shadow: var(--shadow);
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .ethics-box h3 {
+            font-family: var(--font-title);
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        .ethics-box p {
+            font-size: 14px;
+            color: var(--text-light);
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+
+        /*--- CONTACT & ZONE ---*/
+        .contact-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 50px;
+            align-items: start;
+        }
+
+        .contact-info h3 {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            color: var(--text-light);
+            margin-bottom: 30px;
+        }
+
+        .zone-tag {
+            display: inline-block;
+            background-color: var(--primary-light);
+            color: var(--primary);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            margin: 5px;
+            font-weight: 500;
+        }
+
+        .contact-form {
+            background: white;
+            padding: 40px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            color: var(--text-dark);
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px 16px;
+            border: 1px solid #E2E8F0;
+            border-radius: 8px;
+            font-family: var(--font-body);
+            font-size: 15px;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .btn-submit {
+            width: 100%;
+            border: none;
+            cursor: pointer;
+            font-family: var(--font-body);
+            font-size: 16px;
+            background-color: var(--primary);
+        }
+        .btn-submit:hover {
+            background-color: #1e4229;
+        }
+
+        /*--- FOOTER ---*/
+        footer {
+            background-color: #162A1D;
+            color: #E2E8E4;
+            padding: 60px 20px 30px 20px;
+            font-size: 14px;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+            padding-bottom: 40px;
+            margin-bottom: 30px;
+        }
+
+        .footer-brand h4 {
+            font-family: var(--font-title);
+            font-size: 24px;
+            color: white;
+            margin-bottom: 10px;
+        }
+
+        .footer-links a {
+            color: #C3D1C7;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--accent);
+        }
+
+        .footer-bottom {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 15px;
+            color: #A3B8AA;
+            font-size: 12px;
+        }
+
+        /*--- RESPONSIVE ---*/
+        @media (max-width: 768px) {
+            .nav-container { flex-direction: column; gap: 15px; }
+            nav a { margin: 0 10px; }
+            .hero h1 { font-size: 34px; }
+            section, .ebooks-container, .services-container { padding: 60px 20px; }
+            .ebook-card { flex-direction: column; text-align: center; }
+            .ebook-tag { align-self: center; }
+            .ebook-meta { align-self: center; }
+            .pricing-grid { flex-direction: column; align-items: center; }
+            .footer-content, .footer-bottom { flex-direction: column; text-align: center; }
+            .footer-links a { margin: 0 10px; display: inline-block; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVIGATION -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">Naturo<span>party</span></a>
+            <nav>
+                <a href="#approche">Mon Approche</a>
+                <a href="#ebooks">Mes Guides</a>
+                <a href="#tarifs">Consultations</a>
+                <a href="#ethique">Charte Éthique</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Conseil & Éditions de Santé Naturelle</span>
+            <h1>Naturoparty – Votre conseiller en naturopathie sur la Côte d'Azur</h1>
+            <p>Un accompagnement global et des guides pratiques modernes pour optimiser votre énergie, comprendre la chronobiologie et prendre soin de votre corps naturellement.</p>
+            <a href="#contact" class="btn">Prendre rendez-vous</a>
+            <a href="#ebooks" class="btn btn-secondary">Découvrir mes guides</a>
+        </div>
+    </section>
+
+    <!-- MON APPROCHE -->
+    <section id="approche">
+        <h2 class="section-title">Une vision moderne de la naturopathie</h2>
+        <p class="section-subtitle">Une méthode bienveillante, simple et concrète, à contre-courant du jargon médical complexe pour vous rendre pleinement autonome.</p>
+        
+        <div class="approach-grid">
+            <!-- Carte 1 -->
+            <div class="approach-card">
+                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80" alt="Rigueur scientifique" class="approach-img">
+                <div class="approach-text">
+                    <h3>Rigueur Scientifique</h3>
+                    <p>Chaque recommandation s'appuie sur une hygiène de vie éprouvée et des connaissances solides, inspirées des recherches en biologie et nutrition (travaux de l'INRAE, du CNRS).</p>
+                </div>
+            </div>
+            <!-- Carte 2 -->
+            <div class="approach-card">
+                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80" alt="Outils naturels" class="approach-img">
+                <div class="approach-text">
+                    <h3>Outils Naturels Ciblés</h3>
+                    <p>Optimisation de votre bien-être par l'utilisation de la nutrition anti-inflammatoire, des huiles essentielles, des hydrolats, des huiles végétales et de compléments de qualité.</p>
+                </div>
+            </div>
+            <!-- Carte 3 -->
+            <div class="approach-card">
+                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80" alt="Accompagnement" class="approach-img">
+                <div class="approach-text">
+                    <h3>Accompagnement Global</h3>
+                    <p>Une prise en compte globale basée sur le bon sens, la chronobiologie et l'écoute. Pas de fausses promesses, mais des solutions adaptées au rythme de votre vie.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="quote-box">
+            « Votre corps possède d’immenses ressources. Mon rôle est simplement de vous donner les clés pour les activer. »
+        </div>
+    </section>
+
+    <!-- NEW SECTION: EBOOKS VITRINE -->
+    <div class="ebooks-section" id="ebooks">
+        <div class="ebooks-container">
+            <h2 class="section-title">Mes Guides Pratiques & Publications</h2>
+            <p class="section-subtitle">Des ouvrages complets conçus pour vous accompagner pas à pas vers un bien-être durable. Ma collection éditoriale s'étoffe régulièrement.</p>
+            
+            <div class="ebooks-grid">
+                <!-- Ebook 1 -->
+                <div class="ebook-card">
+                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&h=600&q=80" alt="Couverture Livre Bien-être" class="ebook-cover">
+                    <div class="ebook-details">
+                        <span class="ebook-tag">Collection Vitalité</span>
+                        <h3>Les Habitudes de Vie Saines au Quotidien</h3>
+                        <p>Un guide de référence de plus de 25 pages pour intégrer la chronobiologie nutritionnelle et les bons réflexes d'hygiène de vie dans votre routine, sans frustration.</p>
+                        <span class="ebook-meta">📖 Format A5 — Prochainement sur Amazon KDP</span>
+                    </div>
+                </div>
+
+                <!-- Ebook 2 -->
+                <div class="ebook-card">
+                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&h=600&q=80" alt="Couverture Livre Huiles" class="ebook-cover">
+                    <div class="ebook-details">
+                        <span class="ebook-tag">Collection Nature</span>
+                        <h3>Le Guide Essentiel des Huiles & Hydrolats</h3>
+                        <p>Apprenez à utiliser les synergies de plantes, les hydrolats et les huiles végétales de manière sécurisée et adaptée pour booster vos défenses naturelles et votre énergie.</p>
+                        <span class="ebook-meta">📖 Format A5 — Prochainement sur Amazon KDP</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONSULTATIONS & TARIFS -->
+    <div class="services" id="tarifs">
+        <section class="services-container">
+            <h2 class="section-title">Mes Prestations de Conseil</h2>
+            <p class="section-subtitle">Des consultations individuelles, à domicile ou à distance, basées sur la transparence des tarifs et le respect du consommateur.</p>
+            
+            <div class="pricing-grid">
+                <!-- Bilan Initial -->
+                <div class="price-card featured">
+                    <span class="price-badge">Idéal pour démarrer</span>
+                    <h3>Bilan de Vitalité Initial</h3>
+                    <p class="duration">Première consultation — 1h30</p>
+                    <div class="price">75€ <span>TTC</span></div>
+                    <ul class="price-features">
+                        <li>Entretien approfondi (alimentation, sommeil, stress)</li>
+                        <li>Analyse complète de vos habitudes de vie</li>
+                        <li>Élaboration de votre programme d'hygiène personnalisé</li>
+                        <li>Suivi par email inclus pendant 15 jours</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="text-align:center;">Réserver mon bilan</a>
+                </div>
+
+                <!-- Suivi -->
+                <div class="price-card">
+                    <h3>Consultation de Suivi</h3>
+                    <p class="duration">Séance d'ajustement — 1h00</p>
+                    <div class="price">55€ <span>TTC</span></div>
+                    <ul class="price-features">
+                        <li>Évaluation des premiers résultats obtenus</li>
+                        <li>Ajustement des conseils selon votre ressenti</li>
+                        <li>Ancrage des nouvelles habitudes sur le long terme</li>
+                        <li>Approfondissement des outils naturels</li>
+                    </ul>
+                    <a href="#contact" class="btn" style="text-align:center; background-color:#666666; box-shadow:none;">Planifier un suivi</a>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- CHARTE ETHIQUE -->
+    <section id="ethique">
+        <div class="ethics-box">
+            <h3>Cadre Légal & Déontologie</h3>
+            <p><strong>Avertissement important (Article L. 132-5 du Code de la santé publique) :</strong> Les conseils dispensés sur ce site, dans mes guides ou lors des consultations ne constituent en aucun cas un diagnostic médical ni une prescription thérapeutique. La naturopathie intervient en complémentarité de la médecine conventionnelle et ne se substitue jamais aux traitements médicaux en cours ni à l'avis de votre médecin référent.</p>
+            <p>Conformément aux règles de la DGCCRF, la transparence des tarifs est totale et aucun produit ou complément alimentaire ne vous sera jamais imposé. Vous restez pleinement libre de vos choix de santé.</p>
+        </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+        <h2 class="section-title">Discutons de votre projet de vitalité</h2>
+        <p class="section-subtitle">Une question ? Une envie de retrouver l'équilibre ? Envoyez-moi un message pour caler notre premier rendez-vous.</p>
+        
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Prendre contact</h3>
+                <p>Remplissez le formulaire ci-contre. Je prendrai soin de lire votre demande et de vous recontacter sous 48 heures ouvrées.</p>
+                
+                <h3>Zone de déplacement à domicile</h3>
+                <p>Interventions sur le littoral des Alpes-Maritimes et arrière-pays :</p>
+                <div>
+                    <span class="zone-tag">Cagnes-sur-Mer</span>
+                    <span class="zone-tag">Nice</span>
+                    <span class="zone-tag">Cannes</span>
+                    <span class="zone-tag">Antibes</span>
+                    <span class="zone-tag">Vence</span>
+                </div>
+                <p style="margin-top: 25px;">💻 Également disponible partout en France via une **visioconférence sécurisée**.</p>
+            </div>
+
+            <div class="contact-form">
+                <form action="#" method="POST" onsubmit="alert('Démonstration de l\'interface pour France Travail. Le site est prêt pour la mise en ligne technique !'); return false;">
+                    <div class="form-group">
+                        <label for="name">Nom & Prénom</label>
+                        <input type="text" id="name" required placeholder="Ex: Marie Dupont">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Adresse email</label>
+                        <input type="email" id="email" required placeholder="Ex: marie.dupont@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Numéro de téléphone</label>
+                        <input type="tel" id="phone" placeholder="Ex: 06 12 34 56 78">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Votre message / Motif de consultation</label>
+                        <textarea id="message" rows="5" required placeholder="Décrivez brièvement vos attentes ou votre motif de consultation..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Envoyer ma demande</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h4>Naturoparty</h4>
+                <p>Votre partenaire bien-être, vitalité et autonomie au quotidien.</p>
+            </div>
+            <div class="footer-links">
+                <a href="#approche">Approche</a>
+                <a href="#ebooks">Mes Guides</a>
+                <a href="#tarifs">Tarifs</a>
+                <a href="#ethique">Législation</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Naturoparty. Tous droits réservés.</p>
+            <p>Projet de création d'entreprise — Micro-entreprise en cours d'immatriculation (Lancement : 2ème semestre 2026) | Contenu éditorial conforme aux articles L. 132-5 du CSP | Médiation de la consommation (en cours de rattachement)</p>
+        </div>
+    </footer>
+
+</body>
+</html>
