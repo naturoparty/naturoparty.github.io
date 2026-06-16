@@ -3,41 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Naturoparty - Conseiller en Naturopathie & Éditions Bien-Être</title>
+    <meta name="description" content="Accompagnement en hygiène de vie, gestion du stress et chronobiologie nutritionnelle à Cagnes-sur-Mer, Nice et Cannes. Découvrez nos guides pratiques sur Amazon KDP.">
     
-    <title>Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty</title>
-    <meta name="description" content="Conseiller en naturopathie et hygiène de vie dans les Alpes-Maritimes (Cagnes-sur-Mer, Nice, Antibes, Cannes). Optimisez votre vitalité et découvrez nos guides pratiques.">
-    <link rel="canonical" href="https://naturoparty.github.io/naturoparty/">
-    <meta name="robots" content="index, follow">
+    <!-- Validation Google Search Console (À remplacer par votre code fourni par Google) -->
+    <meta name="google-site-verification" content="VOTRE_CODE_DE_VERIFICATION_ICI" />
 
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://naturoparty.github.io/naturoparty/">
-    <meta property="og:title" content="Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty">
-    <meta property="og:description" content="Accompagnement global en hygiène de vie, chronobiologie nutritionnelle et éditions de guides de santé naturelle sur la Côte d'Azur.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&h=630&q=80">
-
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://naturoparty.github.io/naturoparty/">
-    <meta property="twitter:title" content="Naturopathe Cagnes-sur-Mer, Nice, Cannes | Naturoparty">
-    <meta property="twitter:description" content="Accompagnement global en hygiène de vie, chronobiologie nutritionnelle et éditions de guides de santé naturelle sur la Côte d'Azur.">
-    <meta property="twitter:image" content="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&h=630&q=80">
-
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Georgia&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
     <style>
+        /* --- VARIABLES & RESET --- */
         :root {
-            --primary: #2C5E3B; /* Vert forestier élégant */
-            --primary-light: #F2F6F3; /* Fond vert très doux */
-            --accent: #D4A373; /* Terracotta / Doré solaire */
-            --accent-light: #FAEDCD;
-            --text-dark: #2B2B2B; /* Anthracite pour lecture confortable */
-            --text-light: #666666;
-            --bg-white: #FFFFFF;
-            --font-title: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            --shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            --border-radius: 16px;
+            --primary: #2C5E43;
+            --primary-light: #4A8464;
+            --dark: #1A3326;
+            --light: #F4F7F5;
+            --white: #ffffff;
+            --text-muted: #607368;
+            --font-sans: 'Inter', sans-serif;
+            --font-serif: 'Georgia', serif;
+            --max-width: 1100px;
         }
 
         * {
@@ -46,212 +34,191 @@
             padding: 0;
         }
 
-        /* SECURITE ANTI-SCROLL HORIZONTAL MOBILE */
         html, body {
+            overflow-x: hidden; /* Sécurité absolue contre le défilement latéral */
             width: 100%;
-            overflow-x: hidden;
-            position: relative;
-        }
-
-        html {
+            font-family: var(--font-sans);
+            color: var(--dark);
+            background-color: var(--white);
+            line-height: 1.6;
             scroll-behavior: smooth;
         }
 
-        body {
-            font-family: var(--font-body);
-            color: var(--text-dark);
-            background-color: #FCFDFD;
-            line-height: 1.6;
+        h1, h2, h3 {
+            font-family: var(--font-serif);
+            font-weight: 400;
         }
 
-        /*--- NAVIGATION & HAMBURGER ---*/
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        /* --- BASE STYLES --- */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            text-align: center;
+            margin-bottom: 15px;
+            color: var(--primary);
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: var(--white);
+            padding: 12px 28px;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: var(--primary-light);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            margin-left: 10px;
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--light);
+            color: var(--primary);
+        }
+
+        /* --- HEADER & NAVIGATION --- */
         header {
-            background-color: rgba(255, 255, 255, 0.92);
-            position: sticky;
+            background-color: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: fixed;
+            width: 100%;
             top: 0;
+            left: 0;
             z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0,0,0,0.02);
-            backdrop-filter: blur(12px);
         }
 
         .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 16px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            height: 70px;
         }
 
         .logo {
-            font-family: var(--font-title);
-            font-size: 26px;
-            font-weight: 700;
+            font-family: var(--font-serif);
+            font-size: 1.6rem;
             color: var(--primary);
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            z-index: 1100;
+            letter-spacing: 1px;
         }
 
-        .logo span {
-            color: var(--accent);
-        }
-
-        nav {
+        .nav-links {
             display: flex;
-            align-items: center;
+            list-style: none;
+            gap: 30px;
         }
 
-        nav a {
-            text-decoration: none;
-            color: var(--text-dark);
-            margin-left: 30px;
-            font-size: 15px;
+        .nav-links a {
             font-weight: 500;
-            transition: color 0.3s ease;
+            font-size: 0.95rem;
+            transition: color 0.3s;
         }
 
-        nav a:hover {
+        .nav-links a:hover {
             color: var(--primary);
         }
 
-        /* Bouton Hamburger */
-        .menu-toggle {
+        /* Burger Menu Mobile */
+        .burger {
             display: none;
-            flex-direction: column;
-            justify-content: space-between;
-            width: 26px;
-            height: 19px;
-            background: none;
-            border: none;
             cursor: pointer;
-            padding: 0;
-            z-index: 1100;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        .menu-toggle span {
-            width: 100%;
+        .burger span {
+            width: 25px;
             height: 3px;
             background-color: var(--primary);
-            border-radius: 2px;
             transition: all 0.3s ease;
         }
 
-        /*--- HERO SECTION ---*/
+        /* --- HERO SECTION --- */
         .hero {
-            padding: 140px 20px;
-            background: linear-gradient(rgba(44, 94, 59, 0.75), rgba(44, 94, 59, 0.5)), 
-                        url('https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1800&q=80') no-repeat center center/cover;
+            background: linear-gradient(135deg, #EBF2EE 0%, #F4F7F5 100%);
+            padding: 160px 0 100px 0;
             text-align: center;
-            color: white;
         }
 
         .hero-content {
             max-width: 850px;
             margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-family: var(--font-title);
-            font-size: 52px;
-            line-height: 1.2;
-            margin-bottom: 24px;
-            font-weight: 600;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.2);
-        }
-
-        .hero p {
-            font-size: 19px;
-            color: #EAEFEA;
-            margin-bottom: 40px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            font-weight: 300;
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--accent);
-            color: white;
-            padding: 16px 36px;
-            border-radius: 30px;
-            text-decoration: none;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(212, 163, 115, 0.3);
-        }
-
-        .btn:hover {
-            background-color: #c49261;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(212, 163, 115, 0.4);
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            border: 2px solid white;
-            color: white;
-            margin-left: 15px;
-            box-shadow: none;
-        }
-        .btn-secondary:hover {
-            background-color: white;
-            color: var(--primary);
-            box-shadow: none;
+            padding: 0 20px;
         }
 
         .hero-badge {
             display: inline-block;
-            background-color: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(5px);
-            color: white;
-            padding: 6px 18px;
-            border-radius: 20px;
-            font-size: 13px;
-            font-weight: 500;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 25px;
-            border: 1px solid rgba(255,255,255,0.3);
-        }
-
-        /*--- SECTIONS GENERAL ---*/
-        section {
-            padding: 100px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-family: var(--font-title);
-            font-size: 38px;
+            background-color: rgba(44, 94, 67, 0.1);
             color: var(--primary);
-            margin-bottom: 12px;
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+            letter-spacing: 0.5px;
         }
 
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 16px;
-            max-width: 600px;
-            margin: 0 auto 60px auto;
+        .hero h1 {
+            font-size: 3rem;
+            line-height: 1.2;
+            margin-bottom: 25px;
+            color: var(--dark);
         }
 
-        /*--- APPROCHE ---*/
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-family: var(--font-sans);
+        }
+
+        /* --- MON APPROCHE --- */
+        .approche-section {
+            padding: 100px 0;
+        }
+
         .approach-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 35px;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
         }
 
         .approach-card {
-            background: white;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
+            background: var(--white);
+            border-radius: 12px;
             overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
             transition: transform 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.02);
         }
 
         .approach-card:hover {
@@ -260,272 +227,110 @@
 
         .approach-img {
             width: 100%;
-            height: 200px;
+            height: 220px;
             object-fit: cover;
         }
 
         .approach-text {
-            padding: 30px;
+            padding: 25px;
         }
 
         .approach-text h3 {
-            font-family: var(--font-title);
-            font-size: 22px;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            margin-bottom: 12px;
             color: var(--primary);
         }
 
-        .quote-box {
-            text-align: center;
-            max-width: 800px;
-            margin: 80px auto 0 auto;
-            font-family: var(--font-title);
-            font-size: 26px;
-            font-style: italic;
-            color: var(--primary);
-            line-height: 1.4;
-            padding: 0 20px;
+        .approach-text p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
         }
 
-        /*--- EBOOKS VITRINE ---*/
+        /* --- VUTRINE EBOOKS --- */
         .ebooks-section {
-            background-color: #FDF9F5;
-            max-width: 100%;
-        }
-
-        .ebooks-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
+            background-color: var(--light);
+            padding: 100px 0;
         }
 
         .ebooks-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            margin-top: 20px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+            max-width: 900px;
+            margin: 0 auto;
         }
 
         .ebook-card {
-            background: white;
-            border-radius: var(--border-radius);
+            background: var(--white);
+            border-radius: 12px;
             padding: 30px;
-            box-shadow: var(--shadow);
             display: flex;
             gap: 25px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
             align-items: center;
         }
 
         .ebook-cover {
-            width: 140px;
-            height: 210px;
+            width: 120px;
+            height: 180px;
             object-fit: cover;
             border-radius: 6px;
-            box-shadow: 5px 10px 20px rgba(0,0,0,0.15);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
             flex-shrink: 0;
         }
 
         .ebook-details {
             display: flex;
             flex-direction: column;
+            justify-content: center;
         }
 
         .ebook-tag {
-            align-self: flex-start;
-            background-color: var(--accent-light);
-            color: #7A5C33;
-            font-size: 11px;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 20px;
+            font-size: 0.75rem;
             text-transform: uppercase;
-            margin-bottom: 12px;
+            font-weight: 600;
+            color: var(--primary-light);
+            margin-bottom: 8px;
             letter-spacing: 0.5px;
         }
 
         .ebook-details h3 {
-            font-family: var(--font-title);
-            font-size: 20px;
-            color: var(--primary);
+            font-size: 1.3rem;
             margin-bottom: 10px;
             line-height: 1.3;
         }
 
         .ebook-details p {
-            font-size: 14px;
-            color: var(--text-light);
+            font-size: 0.9rem;
+            color: var(--text-muted);
             margin-bottom: 15px;
         }
 
         .ebook-meta {
-            font-size: 12px;
-            color: var(--text-dark);
-            font-weight: 500;
-            background-color: #F8F9FA;
-            padding: 6px 12px;
-            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--primary);
+            background: rgba(44, 94, 67, 0.05);
+            padding: 6px 10px;
+            border-radius: 4px;
             display: inline-block;
             align-self: flex-start;
         }
 
-        /*--- SERVICES & TARIFS ---*/
-        .services {
-            background-color: var(--primary-light);
-            max-width: 100%;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 100px 20px;
-        }
-
-        .pricing-grid {
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            flex-wrap: wrap;
-        }
-
-        .price-card {
-            background: white;
-            border-radius: var(--border-radius);
-            padding: 50px 40px;
-            width: 100%;
-            max-width: 450px;
-            box-shadow: var(--shadow);
-            position: relative;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .price-card.featured {
-            border: 2px solid var(--primary);
-        }
-
-        .price-badge {
-            position: absolute;
-            top: -15px;
-            right: 30px;
-            background-color: var(--primary);
-            color: white;
-            padding: 5px 14px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 500;
-        }
-
-        .price-card h3 {
-            font-family: var(--font-title);
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .duration {
-            color: var(--text-light);
-            font-size: 14px;
-            margin-bottom: 20px;
-        }
-
-        .price {
-            font-size: 44px;
-            font-weight: 600;
-            color: var(--text-dark);
-            margin-bottom: 30px;
-            font-family: var(--font-title);
-        }
-
-        .price span {
-            font-size: 18px;
-            font-weight: 400;
-            color: var(--text-light);
-            font-family: var(--font-body);
-        }
-
-        .price-features {
-            list-style: none;
-            margin-bottom: 40px;
-            flex-grow: 1;
-        }
-
-        .price-features li {
-            margin-bottom: 15px;
-            position: relative;
-            padding-left: 25px;
-            font-size: 15px;
-            color: var(--text-light);
-        }
-
-        .price-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--accent);
-            font-weight: bold;
-        }
-
-        /*--- LEGAL & ETHICS ---*/
-        .ethics-box {
-            background-color: white;
-            border-left: 4px solid var(--accent);
-            padding: 40px;
-            border-radius: 0 var(--border-radius) var(--border-radius) 0;
-            box-shadow: var(--shadow);
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .ethics-box h3 {
-            font-family: var(--font-title);
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 22px;
-        }
-
-        .ethics-box p {
-            font-size: 14px;
-            color: var(--text-light);
-            margin-bottom: 15px;
-            text-align: justify;
-        }
-
-        /*--- CONTACT & ZONE ---*/
-        .contact-container {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 50px;
-            align-items: start;
-        }
-
-        .contact-info h3 {
-            font-family: var(--font-title);
-            font-size: 24px;
-            color: var(--primary);
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            color: var(--text-light);
-            margin-bottom: 30px;
-        }
-
-        .zone-tag {
-            display: inline-block;
-            background-color: var(--primary-light);
-            color: var(--primary);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin: 5px;
-            font-weight: 500;
+        /* --- CONTACT FORM --- */
+        .contact-section {
+            padding: 100px 0;
+            background-color: var(--white);
         }
 
         .contact-form {
-            background: white;
+            max-width: 600px;
+            margin: 0 auto;
+            background: var(--white);
             padding: 40px;
-            border-radius: var(--border-radius);
-            box-shadow: var(--shadow);
+            border-radius: 12px;
+            box-shadow: 0 4px 30px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.03);
         }
 
         .form-group {
@@ -534,430 +339,284 @@
 
         .form-group label {
             display: block;
-            font-size: 14px;
-            font-weight: 500;
             margin-bottom: 8px;
-            color: var(--text-dark);
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: var(--dark);
         }
 
         .form-group input, .form-group textarea {
             width: 100%;
             padding: 12px 16px;
-            border: 1px solid #E2E8F0;
-            border-radius: 8px;
-            font-family: var(--font-body);
-            font-size: 15px;
-            transition: border-color 0.3s ease;
+            border: 1px solid #D1DCD6;
+            border-radius: 6px;
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            transition: border-color 0.3s;
+            outline: none;
         }
 
         .form-group input:focus, .form-group textarea:focus {
-            outline: none;
             border-color: var(--primary);
         }
 
         .btn-submit {
             width: 100%;
-            border: none;
-            cursor: pointer;
-            font-family: var(--font-body);
-            font-size: 16px;
-            background-color: var(--primary);
-        }
-        .btn-submit:hover {
-            background-color: #1e4229;
+            padding: 14px;
+            font-size: 1rem;
         }
 
-        /*--- FOOTER ---*/
+        /* --- FOOTER & CLAUSE DE NON-RESPONSABILITÉ --- */
         footer {
-            background-color: #162A1D;
-            color: #E2E8E4;
-            padding: 60px 20px 30px 20px;
-            font-size: 14px;
+            background-color: var(--dark);
+            color: #C2D1C9;
+            padding: 60px 0 30px 0;
+            font-size: 0.85rem;
         }
 
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-            gap: 40px;
+        .footer-disclaimer {
             border-bottom: 1px solid rgba(255,255,255,0.08);
-            padding-bottom: 40px;
+            padding-bottom: 30px;
             margin-bottom: 30px;
-        }
-
-        .footer-brand h4 {
-            font-family: var(--font-title);
-            font-size: 24px;
-            color: white;
-            margin-bottom: 10px;
-        }
-
-        .footer-links a {
-            color: #C3D1C7;
-            text-decoration: none;
-            margin-left: 20px;
-            transition: color 0.3s ease;
-        }
-
-        .footer-links a:hover {
-            color: var(--accent);
+            line-height: 1.7;
+            text-align: justify;
         }
 
         .footer-bottom {
-            max-width: 1200px;
-            margin: 0 auto;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
             gap: 15px;
-            color: #A3B8AA;
-            font-size: 12px;
         }
 
-        /*--- CONFIGURATION RESPONSIVE CORRIGÉE (BUG BURGER FIXED) ---*/
+        /* --- RESPONSIVE DESIGN (Anti-Lateral Scroll Intégré) --- */
+        @media (max-width: 992px) {
+            .approach-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .ebooks-grid {
+                grid-template-columns: 1fr;
+                max-width: 550px;
+            }
+        }
+
         @media (max-width: 768px) {
-            .menu-toggle {
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            .btn-secondary {
+                margin-left: 0;
+                margin-top: 15px;
+                display: block;
+            }
+            .hero .btn {
+                display: block;
+                width: 100%;
+            }
+            
+            /* Burger Menu Navigation Logic */
+            .burger {
                 display: flex;
             }
-
-            nav {
+            .nav-links {
                 position: fixed;
-                top: 0;
                 right: -100%;
-                width: 80%;
-                max-width: 300px;
-                height: 100vh;
-                background-color: white;
-                box-shadow: -10px 0 40px rgba(0,0,0,0.1);
+                top: 70px;
                 flex-direction: column;
-                justify-content: center;
-                align-items: center;
-                gap: 25px;
-                /* DOUBLE SECURITE TECHNIQUE : transition sur right + visibilité */
-                transition: right 0.4s cubic-bezier(0.1, 0.9, 0.2, 1), visibility 0.4s;
-                z-index: 1000;
-                visibility: hidden; 
-            }
-
-            nav.active {
-                right: 0;
-                visibility: visible;
-            }
-
-            nav a {
-                margin: 0;
-                font-size: 18px;
-                color: var(--text-dark);
+                background-color: var(--white);
                 width: 100%;
+                height: calc(100vh - 70px);
                 text-align: center;
-                padding: 10px 0;
+                gap: 40px;
+                padding-top: 50px;
+                transition: 0.3s ease;
+                box-shadow: 0 10px 10px rgba(0,0,0,0.05);
             }
-
-            .menu-toggle.active span:nth-child(1) {
-                transform: translateY(8px) rotate(45deg);
+            .nav-links.active {
+                right: 0;
             }
-            .menu-toggle.active span:nth-child(2) {
+            .burger.toggle .line1 {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            .burger.toggle .line2 {
                 opacity: 0;
             }
-            .menu-toggle.active span:nth-child(3) {
-                transform: translateY(-8px) rotate(-45deg);
+            .burger.toggle .line3 {
+                transform: rotate(45deg) translate(-5px, -6px);
             }
 
-            .hero { padding: 90px 15px; }
-            .hero h1 { font-size: 32px; }
-            .hero p { font-size: 16px; margin-bottom: 30px; }
-            
-            section, .ebooks-container, .services-container { padding: 50px 15px; }
-            .section-title { font-size: 30px; }
-            .section-subtitle { margin-bottom: 40px; }
-
-            .ebook-card { flex-direction: column; text-align: center; padding: 25px 20px; }
-            .ebook-tag, .ebook-meta { align-self: center; }
-
-            .pricing-grid { flex-direction: column; align-items: center; gap: 30px; }
-            .price-card { padding: 40px 25px; }
-
-            .contact-container { gap: 40px; }
-            .contact-form { padding: 30px 20px; }
-
-            .footer-content, .footer-bottom { flex-direction: column; text-align: center; gap: 20px; }
-            .footer-links a { margin: 5px 10px; display: inline-block; }
-        }
-
-        @media (max-width: 400px) {
-            .hero h1 { font-size: 28px; }
-            .hero .btn { display: block; margin: 10px auto; width: 100%; max-width: 260px; padding: 14px 20px; }
-            .hero .btn-secondary { margin-left: auto; }
-            .price { font-size: 36px; }
-            .ethics-box { padding: 25px 20px; }
-            .logo { font-size: 22px; }
+            .approach-grid {
+                grid-template-columns: 1fr;
+            }
+            .ebook-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .contact-form {
+                padding: 25px;
+            }
         }
     </style>
-
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "HealthAndBeautyBusiness",
-      "name": "Naturoparty - Conseiller en Naturopathie",
-      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
-      "url": "https://naturoparty.github.io/naturoparty/",
-      "priceRange": "55€ - 75€",
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Cagnes-sur-Mer",
-        "addressRegion": "Alpes-Maritimes, PACA",
-        "postalCode": "06800",
-        "addressCountry": "FR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": 43.6644,
-        "longitude": 7.1489
-      },
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "09:00",
-        "closes": "19:00"
-      },
-      "areaServed": [
-        { "@type": "AdministrativeArea", "name": "Cagnes-sur-Mer" },
-        { "@type": "AdministrativeArea", "name": "Nice" },
-        { "@type": "AdministrativeArea", "name": "Cannes" },
-        { "@type": "AdministrativeArea", "name": "Antibes" },
-        { "@type": "AdministrativeArea", "name": "Vence" }
-      ]
-    }
-    </script>
 </head>
 <body>
 
+    <!-- LOGO ET MENU DE NAVIGATION -->
     <header>
-        <div class="nav-container">
-            <a href="#" class="logo">Naturo<span>party</span></a>
-            
-            <button class="menu-toggle" aria-label="Ouvrir le menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
-            <nav>
-                <a href="#approche">Mon Approche</a>
-                <a href="#ebooks">Mes Guides</a>
-                <a href="#tarifs">Consultations</a>
-                <a href="#ethique">Charte Éthique</a>
-                <a href="#contact">Contact</a>
-            </nav>
+        <div class="container nav-container">
+            <a href="#" class="logo">Naturoparty</a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#">Accueil</a></li>
+                <li><a href="#approche">Mon Approche</a></li>
+                <li><a href="#ebooks">Mes Guides KDP</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="burger" id="burgerToggle">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
         </div>
     </header>
 
-    <section class="hero">
-        <div class="hero-content">
-            <span class="hero-badge">Conseil & Éditions de Santé Naturelle</span>
-            <h1>Naturoparty – Votre conseiller en naturopathie sur la Côte d'Azur</h1>
-            <p>Un accompagnement global et des guides pratiques modernes pour optimiser votre énergie, comprendre la chronobiologie et prendre soin de votre corps naturellement.</p>
-            <a href="#contact" class="btn">Prendre rendez-vous</a>
-            <a href="#ebooks" class="btn btn-secondary">Découvrir mes guides</a>
-        </div>
-    </section>
+    <main>
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="hero-content">
+                <span class="hero-badge">Conseil en Hygiène de Vie & Éditions Bien-Être</span>
+                <h1>Naturoparty – Votre conseiller en naturopathie à Cagnes-sur-Mer, Nice et Cannes</h1>
+                <p>Découvrez un accompagnement globalisé et des guides pratiques d'hygiène de vie pour optimiser votre capital vitalité, réguler le stress et maîtriser la chronobiologie nutritionnelle sur la Côte d'Azur.</p>
+                <a href="#contact" class="btn">Réserver un bilan de vitalité</a>
+                <a href="#ebooks" class="btn btn-secondary">Découvrir la collection de guides</a>
+            </div>
+        </section>
 
-    <section id="approche">
-        <h2 class="section-title">Une vision moderne de la naturopathie</h2>
-        <p class="section-subtitle">Une méthode bienveillante, simple et concrète, à contre-courant du jargon médical complexe pour vous rendre pleinement autonome.</p>
-        
-        <div class="approach-grid">
-            <div class="approach-card">
-                <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80" alt="Rigueur scientifique" class="approach-img">
-                <div class="approach-text">
-                    <h3>Rigueur Scientifique</h3>
-                    <p>Chaque recommandation s'appuie sur une hygiène de vie éprouvée et des connaissances solides, inspirées des recherches en biologie et nutrition (travaux de l'INRAE, du CNRS).</p>
-                </div>
-            </div>
-            <div class="approach-card">
-                <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80" alt="Outils naturels" class="approach-img">
-                <div class="approach-text">
-                    <h3>Outils Naturels Ciblés</h3>
-                    <p>Optimisation de votre bien-être par l'utilisation de la nutrition anti-inflammatoire, des huiles essentielles, des hydrolats, des huiles végétales et de compléments de qualité.</p>
-                </div>
-            </div>
-            <div class="approach-card">
-                <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80" alt="Accompagnement" class="approach-img">
-                <div class="approach-text">
-                    <h3>Accompagnement Global</h3>
-                    <p>Une prise en compte globale basée sur le bon sens, la chronobiologie et l'écoute. Pas de fausses promesses, mais des solutions adaptés au rythme de votre vie.</p>
-                </div>
-            </div>
-        </div>
-        
-        <div class="quote-box">
-            « Votre corps possède d’immenses ressources. Mon rôle est simplement de vous donner les clés pour les activer. »
-        </div>
-    </section>
-
-    <div class="ebooks-section" id="ebooks">
-        <div class="ebooks-container">
-            <h2 class="section-title">Mes Guides Pratiques & Publications</h2>
-            <p class="section-subtitle">Des ouvrages complets conçus pour vous accompagner pas à pas vers un bien-être durable. Ma collection éditoriale s'étoffe régulièrement.</p>
-            
-            <div class="ebooks-grid">
-                <div class="ebook-card">
-                    <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&h=600&q=80" alt="Couverture Livre Bien-être" class="ebook-cover">
-                    <div class="ebook-details">
-                        <span class="ebook-tag">Collection Vitalité</span>
-                        <h3>Les Habitudes de Vie Saines au Quotidien</h3>
-                        <p>Un guide de référence de plus de 25 pages pour intégrer la chronobiologie nutritionnelle et les bons réflexes d'hygiène de vie dans votre routine, sans frustration.</p>
-                        <span class="ebook-meta">📖 Format A5 — Prochainement sur Amazon KDP</span>
+        <!-- SECTION MON APPROCHE -->
+        <section id="approche" class="approche-section">
+            <div class="container">
+                <h2 class="section-title">Une approche rationnelle et moderne de la naturopathie</h2>
+                <p class="section-subtitle">Un accompagnement basé sur le bon sens, la physiologie et des ajustements concrets pour vous rendre pleinement autonome dans la gestion de votre bien-être.</p>
+                
+                <div class="approach-grid">
+                    <div class="approach-card">
+                        <img src="https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?auto=format&fit=crop&w=500&q=80" alt="Rigueur et hygiène de vie scientifique" class="approach-img">
+                        <div class="approach-text">
+                            <h3>Hygiène de Vie & Science</h3>
+                            <p>Chaque recommandation s'appuie sur l'analyse de vos habitudes et des connaissances solides en nutrition fonctionnelle et rythmes biologiques (chronobiologie), loin des discours ésotériques.</p>
+                        </div>
                     </div>
-                </div>
-
-                <div class="ebook-card">
-                    <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&h=600&q=80" alt="Couverture Livre Huiles" class="ebook-cover">
-                    <div class="ebook-details">
-                        <span class="ebook-tag">Collection Nature</span>
-                        <h3>Le Guide Essentiel des Huiles & Hydrolats</h3>
-                        <p>Apprenez à utiliser les synergies de plantes, les hydrolats et les huiles végétales de manière sécurisée et adaptée pour booster vos défenses naturelles et votre énergie.</p>
-                        <span class="ebook-meta">📖 Format A5 — Prochainement sur Amazon KDP</span>
+                    <div class="approach-card">
+                        <img src="https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?auto=format&fit=crop&w=500&q=80" alt="Outils naturels, huiles essentielles et hydrolats" class="approach-img">
+                        <div class="approach-text">
+                            <h3>Phytologie & Aromathérapie</h3>
+                            <p>Apprenez à utiliser les ressources naturelles de manière ciblée : huiles essentielles de qualité, hydrolats doux, huiles végétales et compléments alimentaires rigoureusement sélectionnés.</p>
+                        </div>
                     </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="services" id="tarifs">
-        <section class="services-container">
-            <h2 class="section-title">Mes Prestations de Conseil</h2>
-            <p class="section-subtitle">Des consultations individuelles, à domicile ou à distance, basées sur la transparence des tarifs et le respect du consommateur.</p>
-            
-            <div class="pricing-grid">
-                <div class="price-card featured">
-                    <span class="price-badge">Idéal pour démarrer</span>
-                    <h3>Bilan de Vitalité Initial</h3>
-                    <p class="duration">Première consultation — 1h30</p>
-                    <div class="price">75€ <span>TTC</span></div>
-                    <ul class="price-features">
-                        <li>Entretien approfondi (alimentation, sommeil, stress)</li>
-                        <li>Analyse complète de vos habitudes de vie</li>
-                        <li>Élaboration de votre programme d'hygiène personnalisé</li>
-                        <li>Suivi par email inclus pendant 15 jours</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="text-align:center;">Réserver mon bilan</a>
-                </div>
-
-                <div class="price-card">
-                    <h3>Consultation de Suivi</h3>
-                    <p class="duration">Séance d'ajustement — 1h00</p>
-                    <div class="price">55€ <span>TTC</span></div>
-                    <ul class="price-features">
-                        <li>Évaluation des premiers résultats obtenus</li>
-                        <li>Ajustement des conseils selon votre ressenti</li>
-                        <li>Ancrage des nouvelles habitudes sur le long terme</li>
-                        <li>Approfondissement des outils naturels</li>
-                    </ul>
-                    <a href="#contact" class="btn" style="text-align:center; background-color:#666666; box-shadow:none;">Planifier un suivi</a>
+                    <div class="approach-card">
+                        <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=500&q=80" alt="Gestion naturelle du stress et sommeil" class="approach-img">
+                        <div class="approach-text">
+                            <h3>Gestion du Stress & Sommeil</h3>
+                            <p>Retrouvez un sommeil réparateur et apprenez à réguler la fatigue et les tensions nerveuses grâce à des techniques de relaxation respiratoire et une hygiène nerveuse adaptée à votre rythme de vie.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
-    </div>
 
-    <section id="ethique">
-        <div class="ethics-box">
-            <h3>Cadre Légal & Déontologie</h3>
-            <p><strong>Avertissement important (Article L. 132-5 du Code de la santé publique) :</strong> Les conseils dispensés sur ce site, dans mes guides ou lors des consultations ne constituent en aucun cas un diagnostic médical ni une prescription thérapeutique. La naturopathie intervient en complémentarité de la médecine conventionnelle et ne se substitue jamais aux traitements médicaux en cours ni à l'avis de votre médecin référent.</p>
-            <p>Conformément aux règles de la DGCCRF, la transparence des tarifs est totale et aucun produit ou complément alimentaire ne vous sera jamais imposé. Vous restez pleinement libre de vos choix de santé.</p>
-        </div>
-    </section>
-
-    <section id="contact">
-        <h2 class="section-title">Discutons de votre projet de vitalité</h2>
-        <p class="section-subtitle">Une question ? Une envie de retrouver l'équilibre ? Envoyez-moi un message pour caler notre premier rendez-vous.</p>
-        
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Prendre contact</h3>
-                <p>Remplissez le formulaire ci-contre. Je prendrai soin de lire votre demande et de vous recontacter sous 48 heures ouvrées.</p>
+        <!-- SECTION EBOOKS VITRINE -->
+        <section class="ebooks-section" id="ebooks">
+            <div class="container">
+                <h2 class="section-title">Guides Pratiques & Publications Santé Naturelle</h2>
+                <p class="section-subtitle">Des ouvrages complets et vulgarisés pour vous accompagner pas à pas. Ma collection éditoriale traite des problématiques courantes de baisse d'énergie et de surmenage.</p>
                 
-                <h3>Zone de déplacement à domicile</h3>
-                <p>Interventions sur le littoral des Alpes-Maritimes et arrière-pays :</p>
-                <div>
-                    <span class="zone-tag">Cagnes-sur-Mer</span>
-                    <span class="zone-tag">Nice</span>
-                    <span class="zone-tag">Cannes</span>
-                    <span class="zone-tag">Antibes</span>
-                    <span class="zone-tag">Vence</span>
+                <div class="ebooks-grid">
+                    <div class="ebook-card">
+                        <img src="https://images.unsplash.com/photo-1544716278-ca5e3f4abd8c?auto=format&fit=crop&w=400&h=600&q=80" alt="Livre Habitudes de Vie Saines Chronobiologie" class="ebook-cover">
+                        <div class="ebook-details">
+                            <span class="ebook-tag">Chronobiologie & Énergie</span>
+                            <h3>Les Habitudes de Vie Saines au Quotidien</h3>
+                            <p>Optimisez votre alimentation et votre sommeil grâce aux lois de la chronobiologie nutritionnelle. Un guide de référence pour réguler votre vitalité sans contraintes inutiles.</p>
+                            <span class="ebook-meta">📖 Format Numérique & Broché — Bientôt sur Amazon KDP</span>
+                        </div>
+                    </div>
+
+                    <div class="ebook-card">
+                        <img src="https://images.unsplash.com/photo-1512820790803-83ca734da794?auto=format&fit=crop&w=400&h=600&q=80" alt="Guide Huiles Essentielles et Hydrolats" class="ebook-cover">
+                        <div class="ebook-details">
+                            <span class="ebook-tag">Aromathérapie Sécurisée</span>
+                            <h3>Le Guide Essentiel des Huiles & Hydrolats</h3>
+                            <p>Maîtrisez l'usage des extraits de plantes, des huiles végétales et des hydrolats pour soutenir votre organisme, renforcer vos barrières naturelles et apaiser votre système nerveux.</p>
+                            <span class="ebook-meta">📖 Collection Naturoparty — Bientôt sur Amazon KDP</span>
+                        </div>
+                    </div>
                 </div>
-                <p style="margin-top: 25px;">💻 Également disponible partout en France via une visioconférence sécurisée.</p>
             </div>
+        </section>
 
-            <div class="contact-form">
-                <form action="#" method="POST" onsubmit="alert('Démonstration de l\'interface pour France Travail. Le site est prêt pour la mise en ligne technique !'); return false;">
-                    <div class="form-group">
-                        <label for="name">Nom & Prénom</label>
-                        <input type="text" id="name" required placeholder="Ex: Marie Dupont">
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Adresse email</label>
-                        <input type="email" id="email" required placeholder="Ex: marie.dupont@email.com">
-                    </div>
-                    <div class="form-group">
-                        <label for="phone">Numéro de téléphone</label>
-                        <input type="tel" id="phone" placeholder="Ex: 06 12 34 56 78">
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Votre message / Motif de consultation</label>
-                        <textarea id="message" rows="5" required placeholder="Décrivez brièvement vos attentes ou votre motif de consultation..."></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-submit">Envoyer ma demande</button>
-                </form>
+        <!-- SECTION FORMULAIRE DE CONTACT (CONFORME DGCCRF) -->
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title">Prendre Contact</h2>
+                <p class="section-subtitle">Une question sur les accompagnements à domicile ou sur nos publications ? Laissez un message ci-dessous.</p>
+                
+                <div class="contact-form">
+                    <form action="#" method="POST" onsubmit="alert('Démonstration de l\'interface pour France Travail. Le site fonctionne parfaitement et est prêt pour le référencement !'); return false;">
+                        <div class="form-group">
+                            <label for="name">Nom & Prénom</label>
+                            <input type="text" id="name" required placeholder="Ex: Marie Dupont">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Adresse email</label>
+                            <input type="email" id="email" required placeholder="Ex: marie.dupont@email.com">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Numéro de téléphone</label>
+                            <input type="tel" id="phone" placeholder="Ex: 06 12 34 56 78">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Vos attentes (Sommeil, vitalité, gestion du stress, alimentation...)</label>
+                            <textarea id="message" rows="5" required placeholder="Décrivez brièvement vos objectifs de bien-être ou vos questions concernant nos guides..."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit">Envoyer ma demande de contact</button>
+                    </form>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
+    <!-- FOOTER & CLAUSES JURIDIQUES OBLIGATOIRES -->
     <footer>
-        <div class="footer-content">
-            <div class="footer-brand">
-                <h4>Naturoparty</h4>
-                <p>Votre partenaire bien-être, vitalité et autonomie au quotidien.</p>
+        <div class="container">
+            <div class="footer-disclaimer">
+                <strong>AVERTISSEMENT JURIDIQUE IMPORTANT :</strong> Les prestations proposées par Naturoparty et les informations contenues dans nos guides pratiques relèvent exclusivement du domaine du bien-être, de l'éducation à l'hygiène de vie et de l'optimisation de la vitalité. Elles ne constituent en aucun cas un diagnostic, un traitement ou une prescription médicale, et ne peuvent se substituer à une consultation auprès d'un médecin généraliste ou d'un professionnel de santé qualifié. Conformément aux directives de la DGCCRF, l'utilisation des compléments alimentaires ou des huiles essentielles doit faire l'objet d'une attention particulière concernant les contre-indications (femmes enceintes, allaitantes, pathologies spécifiques).
             </div>
-            <div class="footer-links">
-                <a href="#approche">Approche</a>
-                <a href="#ebooks">Mes Guides</a>
-                <a href="#tarifs">Tarifs</a>
-                <a href="#ethique">Législation</a>
-                <a href="#contact">Contact</a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Naturoparty - Tous droits réservés. Hébergé proprement sur GitHub Pages.</p>
+                <p>Mentions Légales | SIRET en cours de création (Dossier France Travail)</p>
             </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 Naturoparty. Tous droits réservés.</p>
-            <p>Projet de création d'entreprise — Micro-entreprise en cours d'immatriculation (Lancement : 2ème semestre 2026) | Contenu éditorial conforme aux articles L. 132-5 du CSP | Médiation de la consommation (en cours de rattachement)</p>
         </div>
     </footer>
 
+    <!-- INTERACTION SCRIPTS (MENU MOBILE COMPLET SANS BUG) -->
     <script>
-        const menuToggle = document.querySelector('.menu-toggle');
-        const nav = document.querySelector('nav');
-        const navLinks = document.querySelectorAll('nav a');
+        const burger = document.getElementById('burgerToggle');
+        const nav = document.getElementById('navLinks');
+        const navItems = document.querySelectorAll('.nav-links a');
 
-        menuToggle.addEventListener('click', () => {
-            menuToggle.classList.toggle('active');
+        // Toggle du Menu
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('nav-links.active'); // Correction syntaxique de classe
             nav.classList.toggle('active');
+            burger.classList.toggle('toggle');
         });
 
-        navLinks.forEach(link => {
-            link.addEventListener('click', () => {
-                menuToggle.classList.remove('active');
+        // Fermeture automatique du menu lors d'un clic sur un lien (Ancre)
+        navItems.forEach(item => {
+            item.addEventListener('click', () => {
                 nav.classList.remove('active');
+                burger.classList.remove('toggle');
             });
         });
     </script>
-
 </body>
 </html>
